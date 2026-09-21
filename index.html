@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Our Team - 3D Carousel</title>
     <style>
       * {
         margin: 0;
@@ -151,6 +151,7 @@
         margin-bottom: 10px;
         position: relative;
         display: inline-block;
+        transition: opacity 0.3s ease;
       }
 
       .member-name::before,
@@ -181,7 +182,9 @@
         padding: 10px 0;
         margin-top: -15px;
         position: relative;
+        transition: opacity 0.3s ease;
       }
+
       .dots {
         display: flex;
         justify-content: center;
@@ -282,49 +285,53 @@
           left: -70px;
         }
 
-  .member-name::after {
-    right: -70px;
-  }
-}
+        .member-name::after {
+          right: -70px;
+        }
+      }
     </style>
   </head>
   <body>
     <h1 class="about-title">OUR TEAM</h1>
 
     <div class="carousel-container">
-      <button class="nav-arrow left">‹</button>
+      <button class="nav-arrow left" aria-label="Previous">‹</button>
       <div class="carousel-track">
         <div class="card" data-index="0">
           <img
-            src="01.jpg"
-            alt="Team Member 1"
+            src="images.01.jpg"
+            alt="Kriangsak Pansuai"
+            onerror="this.src='https://placehold.co/600x800/082A7B/FFFFFF?text=Member+1'"
           />
         </div>
         <div class="card" data-index="1">
           <img
-            src="02.jpg"
-            alt="Team Member 2"
+            src="images.02.jpg"
+            alt="Nadia Waesamae"
+            onerror="this.src='https://placehold.co/600x800/082A7B/FFFFFF?text=Member+2'"
           />
         </div>
         <div class="card" data-index="2">
           <img
-            src="03.jpg"
-            alt="Team Member 3"
+            src="images.03.jpg"
+            alt="Pratchawin Tanyong"
+            onerror="this.src='https://placehold.co/600x800/082A7B/FFFFFF?text=Member+3'"
           />
         </div>
         <div class="card" data-index="3">
           <img
-            src="04.jpg"
-            alt="Team Member 4"
+            src="images.04.jpg"
+            alt="Baddaroh Tohair"
+            onerror="this.src='https://placehold.co/600x800/082A7B/FFFFFF?text=Member+4'"
           />
         </div>
       </div>
-      <button class="nav-arrow right">›</button>
+      <button class="nav-arrow right" aria-label="Next">›</button>
     </div>
 
     <div class="member-info">
-      <h2 class="member-name">David Kim</h2>
-      <p class="member-role">Founder</p>
+      <h2 class="member-name">Kriangsak Pansuai</h2>
+      <p class="member-role">Scale</p>
     </div>
 
     <div class="dots">
@@ -332,9 +339,7 @@
       <div class="dot" data-index="1"></div>
       <div class="dot" data-index="2"></div>
       <div class="dot" data-index="3"></div>
-      <div class="dot" data-index="4"></div>
     </div>
-
 
     <script>
       const teamMembers = [
@@ -394,8 +399,10 @@
         memberRole.style.opacity = "0";
 
         setTimeout(() => {
-          memberName.textContent = teamMembers[currentIndex].name;
-          memberRole.textContent = teamMembers[currentIndex].role;
+          if (teamMembers[currentIndex]) {
+            memberName.textContent = teamMembers[currentIndex].name;
+            memberRole.textContent = teamMembers[currentIndex].role;
+          }
           memberName.style.opacity = "1";
           memberRole.style.opacity = "1";
         }, 300);
@@ -458,6 +465,7 @@
         }
       }
 
+      // Initialize carousel with first item
       updateCarousel(0);
     </script>
   </body>
