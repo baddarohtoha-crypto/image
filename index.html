@@ -178,25 +178,62 @@
             {
                 image: { src: "01.jpg" },
                 title: "Kriangsak Pansuai ",
-                Position:"Chief Mechanic"
+                Position:"Chief Mechanic",
             },
             {
-                image: { src: "https://imagedelivery.net/IEUjvl3YUlxY-MrTpOAWDQ/933a7615-f4b6-4eae-8ed1-705fa0e24400/w=800" },
-                title: "Olivia Carter",
+                image: { src: "02.jpg" },
+                title: "Nadia Waesamae",
+                Position:"Finance Department Head",
             },
             {
-                image: { src: "https://imagedelivery.net/IEUjvl3YUlxY-MrTpOAWDQ/859c75ea-953e-489e-be61-91a03a35d700/w=800" },
-                title: "Amelia Foster",
+                image: { src: "03.jpg" },
+                title: "Pratchawin Tanyong",
+                Position:"Security Guard",
             },
             {
-                image: { src: "https://imagedelivery.net/IEUjvl3YUlxY-MrTpOAWDQ/31afae9c-5ba3-4ec3-2534-ed8198ed1100/w=800" },
-                title: "Benjamin Harris",
+                image: { src: "04.่jpg" },
+                title: "Baddaroh Tohair",
+                 Position:"Accounting Department",
+            }
+        ]
+                 const COMPONENT_DEFAULTS = {
+            slides: DEFAULT_SLIDES,
+            cardWidth: 400,
+            cardHeight: 400,
+            radius: 3,
+            tilt: 12,
+            sideTilt: 8,
+            gap: 8,
+            opacity: 60,
+            autoplay: false,
+            autoplayDirection: "rightToLeft",
+            transition: {
+                type: "tween",
+                duration: 0.6,
+                delay: 2.5,
+                ease: [0.22, 1, 0.36, 1],
             },
-            {
-                image: { src: "https://imagedelivery.net/IEUjvl3YUlxY-MrTpOAWDQ/ed7b1c40-3332-43d8-a9eb-4615ef341b00/w=800" },
-                title: "Lucas Martin",
+            showTitle: true,
+            titleFont: {
+                fontFamily: "Inter",
+                fontSize: "28px",
+                letterSpacing: "-0.02em",
+                lineHeight: "1.1em",
             },
-        ];
+            titleColor: "#ffffff",
+            titlePosition: {
+                position: "bottomLeft",
+                paddingLeft: 22,
+                paddingRight: 22,
+                paddingTop: 24,
+                paddingBottom: 24,
+            },
+        };
+
+        const PERSPECTIVE = 1600;
+        const SCALE_STEP = 0.16;
+        const MAX_VISIBLE = 2;
+        const DEPTH = 240;
         }
 
         window.onload = init;
@@ -208,4 +245,3 @@ git status
 git add .
 git commit -m "Remove social links"
 git push origin main
-  
